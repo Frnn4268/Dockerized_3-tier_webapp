@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import axios from "axios";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";  // Importar React Router
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";  
 import './App.css';
 
 const queryClient = new QueryClient();
@@ -21,9 +21,10 @@ function CurrentTime(props) {
 
   return (
     <div className="App">
-      <p>---</p>
       <p>API: {data.api}</p>
-      <p>Data from DB: {JSON.stringify(data)}</p>
+      <div className="json-container">
+        <pre>{JSON.stringify(data, null, 2)}</pre> 
+      </div>
       <div>{isFetching ? "Updating..." : ""}</div>
     </div>
   );
@@ -43,17 +44,26 @@ function TableData(props) {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <div className="App">
-      <p>---</p>
+    <div className="table-container">
       <h2>Data from 'example' table</h2>
-      <ul>
-        {data.map((item) => (
-          <li key={item.id} style={{ textAlign: "center", listStyleType: "none" }}>
-            <p>Name: {item.name}</p>
-            <p>Value: {item.value}</p>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <div>{isFetching ? "Updating..." : ""}</div>
     </div>
   );

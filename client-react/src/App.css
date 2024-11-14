@@ -1,15 +1,7 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .welcome-message {
   font-size: 2rem;
   text-align: center;
-  animation: scaleAnimation 3s infinite alternate;
+  animation: scaleAnimation 2s infinite alternate;
 }
 
 @keyframes scaleAnimation {
@@ -27,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .nav-link {
@@ -43,6 +35,46 @@
   background-color: #555;
   border-radius: 5px;
 }
+
+.json-container {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap; 
+  overflow-x: auto; 
+  border: 1px solid #ccc;
+}
+
+.table-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
 
 #root {
   max-width: 1280px;
