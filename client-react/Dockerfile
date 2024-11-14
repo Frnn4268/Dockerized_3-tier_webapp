@@ -12,7 +12,7 @@ COPY package*.json ./
 # Use cache mount to speed up install of existing dependencies
 RUN --mount=type=cache,target=/usr/src/app/.npm \
   npm set cache /usr/src/app/.npm && \
-  npm install
+  npm install --legacy-peer-deps
 
 COPY . .
 
