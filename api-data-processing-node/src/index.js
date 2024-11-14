@@ -9,11 +9,12 @@ const port = process.env.PORT || 3001;
 // setup the logger
 app.use(morgan('tiny'));
 
-app.get('/data', async (req, res) => {
+app.get('/', async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query('SELECT * FROM example;');
-    res.json(result.rows);
+    res.json(result.rows);  
+    res.status(200);
   } catch (err) {
     console.error(err);
     res.status(500).send('Error retrieving data');
