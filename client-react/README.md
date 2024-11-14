@@ -4,7 +4,7 @@ npm create vite@latest
 
 ```
 nvm ls
-nvm use node 19.4
+nvm use node 18.19.1
 npm install
 npm run dev
 ```

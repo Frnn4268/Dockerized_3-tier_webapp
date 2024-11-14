@@ -1,4 +1,4 @@
-# Minimal 3 tier web application
+# Minimal 3 Tier Web Application
 - **React frontend (using Vite.js):** Uses react query to load data from the two apis and display the result.
 - **Node JS and Golang APIs:** Both have `/` and `/ping` endpoints. `/` queries the Database for the current time, and `/ping` returns `pong`.
 - **PostgreSQL Database:** An empty PostgreSQL database with no tables or data. Used to show how to set up connectivity. The API applications execute `SELECT NOW() as now;` to determine the current time to return.
@@ -11,7 +11,7 @@ The `Makefile` contains the commands to start each application.
 
 ### PostgreSQL
 
-- It's way more convenient to run postgres in a container as we saw in `04-using-3rd-party-containers`, so we will do that.
+- It's way more convenient to run postgres in a container, like we do in this project.
 
 - `make run-postgres` will start postgres in a container and publish port 5432 from the container to your localhost.
 
@@ -21,6 +21,13 @@ The `Makefile` contains the commands to start each application.
 
 - After installing the dependencies, `make run-api-node` will run the api in development mode with nodemon for restarting the app when you make source code changes.
 
+### api-data-processing-node - Node.js
+
+- To run the node api you will need to run `npm install` to install the dependencies (I used node `v18.19.1` and npm `v9.2.0`).
+
+- After installing the dependencies, `make seed-database` to inject test data, then we will need will run `make run-data-service` to run the api in development mode with nodemon for restarting the app when you make source code changes.
+
+
 ### api-golang - Golang
 
 - To run the golang api you will need to run `go mod download` to download and install the dependencies (I used `go1.22.2`)
@@ -29,6 +36,6 @@ The `Makefile` contains the commands to start each application.
 
 ### client-react - Vite.js
 
-- Like `api-node`, you will first need to install the dependencies with `npm install` (again, I used node `v18.19.1` and npm `v9.2.0`)
+- Like `api-node` and `api-data-processing-node`, you will first need to install the dependencies with `npm install` (again, I used node `v18.19.1` and npm `v9.2.0`)
 
 - After installing the dependencies, `make run-client-react` will use vite to run the react app in development mode.
