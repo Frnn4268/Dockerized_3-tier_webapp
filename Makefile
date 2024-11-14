@@ -28,3 +28,17 @@ run-client-react:
 	@echo Starting react client
 	cd client-react && \
 		npm run dev
+
+.PHONY: run-data-service
+run-data-service:
+	@echo Starting data processing service
+	cd api-data-processing-node && \
+		DATABASE_URL=${DATABASE_URL} \
+		npm run dev
+
+.PHONY: seed-database
+seed-database:
+	@echo Seeding database
+	cd api-data-processing-node && \
+		DATABASE_URL=${DATABASE_URL} \
+		npm run seed
