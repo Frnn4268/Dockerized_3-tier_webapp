@@ -39,3 +39,11 @@ The `Makefile` contains the commands to start each application.
 - Like `api-node` and `api-data-processing-node`, you will first need to install the dependencies with `npm install` (again, I used node `v18.19.1` and npm `v9.2.0`)
 
 - After installing the dependencies, `make run-client-react` will use vite to run the react app in development mode.
+
+## Running the Application with docker-compose.yml
+
+To run the complete application with the compose, you will need to run:
+
+```bash
+    docker-compose up --build -d
+```
