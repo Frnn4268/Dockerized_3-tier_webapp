@@ -21,13 +21,6 @@ The `Makefile` contains the commands to start each application.
 
 - After installing the dependencies, `make run-api-node` will run the api in development mode with nodemon for restarting the app when you make source code changes.
 
-### api-data-processing-node - Node.js
-
-- To run the node api you will need to run `npm install` to install the dependencies (I used node `v18.19.1` and npm `v9.2.0`).
-
-- After installing the dependencies, `make seed-database` to inject test data, then we will need will run `make run-data-service` to run the api in development mode with nodemon for restarting the app when you make source code changes.
-
-
 ### api-golang - Golang
 
 - To run the golang api you will need to run `go mod download` to download and install the dependencies (I used `go1.22.2`)
