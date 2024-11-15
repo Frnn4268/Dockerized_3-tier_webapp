@@ -62,8 +62,10 @@ services:
       - backend
     ports:
       - 5432:5432
+
 volumes:
   pgdata:
+
 networks:
   frontend:
   backend:

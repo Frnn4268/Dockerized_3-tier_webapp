@@ -21,12 +21,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api\/node/, ''),
         secure: false,
       },
-      '/api/seed-node/': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/seed-node/, ''),
-        secure: false,
-      },
     },
   },
 });
