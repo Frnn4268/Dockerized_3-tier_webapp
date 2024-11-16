@@ -41,4 +41,4 @@ To run the complete application with the compose, you will need to run:
 docker-compose up --build -d
 ```
 
-Or you can run the main Makefile commands if you can use a specific docker-compose.yml.
+You can also run the main `Makefile` commands using a specific docker-compose.yml.
