@@ -56,9 +56,6 @@ compose-down:
 
 ###
 
-DOCKERCONTEXT_DIR:=../05-example-web-application/
-DOCKERFILE_DIR:=../11-development-workflow/
-
 .PHONY: run-tests
 run-tests:
 	docker compose -f $(DEV_COMPOSE_FILE) -f $(TEST_COMPOSE_FILE) run --build api-golang

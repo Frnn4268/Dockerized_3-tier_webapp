@@ -38,5 +38,7 @@ The `Makefile` contains the commands to start each application.
 To run the complete application with the compose, you will need to run:
 
 ```bash
-    docker-compose up --build -d
+docker-compose up --build -d
 ```
+
+Or you can run the main Makefile commands if you can use a specific docker-compose.yml.
