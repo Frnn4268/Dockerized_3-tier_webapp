@@ -63,6 +63,24 @@ services:
     ports:
       - 5432:5432
 
+  init-db:
+    image: postgres:15.1-alpine
+    depends_on:
+      - db
+    volumes:
+      - ./db/schema.sql:/scripts/schema.sql:ro
+      - ./db/seed-data.sql:/scripts/seed-data.sql:ro
+    environment:
+      - PGPASSWORD=foobarbaz
+    entrypoint: >
+      /bin/sh -c "
+      sleep 10 &&
+      psql -h db -U postgres -f /scripts/schema.sql &&
+      psql -h db -U postgres -f /scripts/seed-data.sql
+      "
+    networks:
+      - backend
+
 volumes:
   pgdata:
 
