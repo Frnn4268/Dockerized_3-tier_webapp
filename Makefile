@@ -1,4 +1,6 @@
 DATABASE_URL:=postgres://postgres:foobarbaz@localhost:5432/postgres
+
+COMPOSE_FILE=docker-compose.yml
 DEV_COMPOSE_FILE=docker-compose-dev.yml
 DEBUG_COMPOSE_FILE=docker-compose-debug.yml
 TEST_COMPOSE_FILE=docker-compose-test.yml
@@ -60,3 +62,10 @@ compose-down:
 run-tests:
 	docker compose -f $(DEV_COMPOSE_FILE) -f $(TEST_COMPOSE_FILE) run --build api-golang
 	docker compose -f $(DEV_COMPOSE_FILE) -f $(TEST_COMPOSE_FILE) run --build api-node
+
+###
+
+.PHONY: run-init-db
+run-init-db:
+	@echo Starting DB initialization
+	docker compose -f $(COMPOSE_FILE) run --rm init-db
