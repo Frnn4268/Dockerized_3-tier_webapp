@@ -70,9 +70,9 @@ This repository contains a minimal 3-tier web application set up for deployment 
    ```
 
 4. **Remove the stack:**
-  ```bash
-  make swarm-remove-stack
-  ```
+   ```bash
+   make swarm-remove-stack
+   ```
 
 
 ### Secrets Management
