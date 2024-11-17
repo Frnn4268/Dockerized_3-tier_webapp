@@ -1,5 +1,8 @@
 services:
   client-react-vite:
+    labels:
+      shipyard.primary-route: true
+      shipyard.route: '/'
     image: client-react-vite
     build:
       context: ./client-react/
@@ -11,6 +14,7 @@ services:
       - frontend
     ports:
       - 5173:5173
+    restart: unless-stopped
 
   api-node:
     labels:
