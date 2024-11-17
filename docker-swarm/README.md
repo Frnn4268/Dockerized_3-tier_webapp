@@ -38,13 +38,13 @@ This repository contains a minimal 3-tier web application set up for deployment 
 3. **Alternatively, start services in detached mode:**
 
    ```bash
-make compose-up-d
+   make compose-up-d
    ```
 
 4. **Stop services:**
 
    ```bash
-make compose-down
+   make compose-down
    ```
 
 5. The application will be accessible at http://localhost:5173 for the frontend, and API services will be available on their respective ports (3000, 8080).
