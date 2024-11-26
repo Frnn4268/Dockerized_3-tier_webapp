@@ -1,9 +1,21 @@
-# Minimal 3 Tier Web Application
+# Minimal 3-Tier Web Application
+
+This project is a minimal implementation of a three-tier web application architecture, designed to demonstrate the use of various modern technologies and deployment techniques. It comprises a Node.js service, a Go API, a PostgreSQL database, and a React (Vite) frontend.
+
 - **React frontend (using Vite.js):** Uses react query to load data from the two apis and display the result.
 - **Node JS and Golang APIs:** Both have `/` and `/ping` endpoints. `/` queries the Database for the current time, and `/ping` returns `pong`.
 - **PostgreSQL Database:** An empty PostgreSQL database with no tables or data. Used to show how to set up connectivity. The API applications execute `SELECT NOW() as now;` to determine the current time to return.
 
 ![](./readme-assets/tech-stack.png)
+
+## Technologies Used
+
+- Frontend: Built with React using Vite for streamlined development and build processes.
+- Backend: Services implemented using Node.js and Go, offering robust APIs.
+- Database: PostgreSQL for reliable and scalable data storage.
+- Containerization: Docker is used for containerizing applications to ensure consistent environments across development and production.
+- CI/CD: GitHub Actions for continuous integration and deployment, including automated vulnerability scanning.
+- Docker Swarm: Deployed with Docker Swarm for managing services at scale.
 
 ## Running the Application
 
@@ -42,3 +54,11 @@ docker-compose up --build -d
 ```
 
 You can also run the main `Makefile` commands using a specific docker-compose.yml.
+
+## Problem Solved
+
+This architecture serves as a blueprint for developing scalable web applications by efficiently separating concerns across a client, server, and data storage with a focus on maintainability, scalability, and efficient deployment workflows. Through containerization and orchestration practices, the project showcases the deployment versatility and ease of scaling in a microservices-driven environment.
+
+## Deployment
+
+The application supports development and production environments with Docker Compose and Docker Swarm, ensuring smooth transitions between local development and cloud deployment.
