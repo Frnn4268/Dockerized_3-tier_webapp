@@ -1,4 +1,4 @@
-# Minimal 3-Tier Web Application
+# Dockerized Minimal 3-Tier Web Application
 
 This project is a minimal implementation of a three-tier web application architecture, designed to demonstrate the use of various modern technologies and deployment techniques. It comprises a Node.js service, a Go API, a PostgreSQL database, and a React (Vite) frontend.
 
